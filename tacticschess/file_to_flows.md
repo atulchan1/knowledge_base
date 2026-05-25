@@ -2,6 +2,9 @@
 
 This document provides an inverted index, mapping each source file to the backend API flow(s) it participates in.
 
+### `controller/AuthController.java`
+- `flow-be-004`: User Authentication
+
 ### `controller/CheckMatePuzzleController.java`
 - `flow-be-001`: Request a "Mate in X" Puzzle
 
@@ -10,9 +13,6 @@ This document provides an inverted index, mapping each source file to the backen
 
 ### `controller/PuzzleController.java`
 - `flow-be-002`: Request a Personalized Puzzle
-
-### `controller/UserController.java`
-- `flow-be-004`: User Management (Placeholder)
 
 ### `service/MatePuzzleService.java`
 - `flow-be-001`: Request a "Mate in X" Puzzle
@@ -24,7 +24,10 @@ This document provides an inverted index, mapping each source file to the backen
 - `flow-be-003`: Process a Player's Move
 
 ### `service/UserService.java`
-- `flow-be-004`: User Management (Placeholder)
+- `flow-be-004`: User Authentication
+
+### `service/UserAccount.java`
+- `flow-be-004`: User Authentication
 
 ### `repository/MatePuzzleFenRepository.java`
 - `flow-be-001`: Request a "Mate in X" Puzzle
@@ -35,8 +38,26 @@ This document provides an inverted index, mapping each source file to the backen
 ### `repository/PuzzleRepository.java`
 - `flow-be-002`: Request a Personalized Puzzle
 
-### `repository/UserRepository.java`
-- `flow-be-004`: User Management (Placeholder)
+### `security/SecurityConfig.java`
+- `flow-be-004`: User Authentication
+
+### `security/TokenAuthenticationFilter.java`
+- `flow-be-004`: User Authentication
+
+### `security/TokenService.java`
+- `flow-be-004`: User Authentication
+
+### `security/InMemoryTokenStore.java`
+- `flow-be-004`: User Authentication
+
+### `security/TokenData.java`
+- `flow-be-004`: User Authentication
+
+### `security/AuthRequest.java`
+- `flow-be-004`: User Authentication
+
+### `security/AuthResponse.java`
+- `flow-be-004`: User Authentication
 
 ### `util/StockFishClient.java`
 - `flow-be-003`: Process a Player's Move

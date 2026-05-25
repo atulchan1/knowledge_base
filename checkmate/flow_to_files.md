@@ -2,26 +2,24 @@
 
 This document maps the application flows to the source code files that are primarily responsible for their implementation.
 
-### `flow-001`: Application Loading & Authentication Check
+### `flow-001`: Application Loading
 - `src/main.tsx`: Entry point of the React application.
-- `src/App.tsx`: Core component that contains the primary authentication state and routing logic.
-- `src/vite-env.d.ts`: Provides TypeScript type definitions for the Vite environment.
+- `src/App.tsx`: Core component that contains the primary authentication state and renders the correct initial page.
 
 ### `flow-002`: User Authentication
-- `src/LoginPage.tsx`: The main UI component for all authentication forms (login, signup, forgot password).
-- `src/api.ts`: Contains the (mocked) API functions `loginUser`, `signUpUser`, and `forgotPassword`.
+- `src/LoginPage.tsx`: The main UI component for the login form.
+- `src/api.ts`: Contains the `loginUser` function that calls the backend API.
 - `src/App.tsx`: Manages the `isAuthenticated` state and handles the successful login callback.
+- `src/config.ts`: Provides the base URL for the API call.
 
 ### `flow-003`: Puzzle Selection & Configuration
 - `src/PuzzleHomePage.tsx`: Displays the puzzle selection tiles and the external account linking interface.
 - `src/api.ts`: Contains the `verifyExternalAccount` function for validating Lichess/Chess.com usernames.
 - `src/App.tsx`: Renders the `PuzzleHomePage` when the user is authenticated.
 
-### `flow-004`: Chess Puzzle Gameplay
-- `src/Chessboard.tsx`: The central component that manages the entire puzzle lifecycle, state, and user interaction.
-- `src/Square.tsx`: Represents a single square on the board and handles drag-and-drop events.
-- `src/api.ts`: Contains `fetchGameData` to get the initial puzzle and `fetchNewMoves` to process player moves.
-- `src/config.ts`: Provides the base URL for the API calls.
+### `flow-004`: Authenticated API Requests
+- `src/api.ts`: The `fetchWithAuth` wrapper automatically includes the auth cookie. It also handles 401 errors by triggering a logout.
+- `src/Chessboard.tsx`: An example of a component that uses `fetchWithAuth` (via `fetchGameData` and `fetchNewMoves`) to interact with protected endpoints.
 
 ### `flow-005`: Pawn Promotion
 - `src/Chessboard.tsx`: Detects when a promotion move occurs and triggers the modal.
@@ -33,6 +31,6 @@ This document maps the application flows to the source code files that are prima
 - `src/api.ts`: The response from `fetchNewMoves` contains the fields (`isCheckMate`, `isStalemate`, `points`) that determine the outcome.
 
 ### `flow-007`: User Logout
-- `src/App.tsx`: Contains the `handleLogout` function that clears `localStorage` and resets the authentication state.
-- `src/PuzzleHomePage.tsx`: Contains a "Logout" button in the header.
-- `src/Chessboard.tsx`: Contains a "Logout" button in its banner.
+- `src/App.tsx`: Contains the `handleLogout` function that calls the logout API and resets the authentication state.
+- `src/api.ts`: Contains the `logoutUser` function.
+- `src/PuzzleHomePage.tsx`: Contains a "Logout" button that triggers the flow.
