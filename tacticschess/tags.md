@@ -10,6 +10,7 @@ This document defines a set of tags for key concepts and maps them to the releva
 - **`domain-model`**: Relies on the core chess domain objects (e.g., `Board`, `Piece`).
 - **`dto`**: Uses Data Transfer Objects for API requests or responses.
 - **`spring-boot`**: A core flow managed by the Spring Boot framework.
+- **`security`**: Related to user authentication, authorization, and session management.
 
 ---
 
@@ -19,15 +20,18 @@ This document defines a set of tags for key concepts and maps them to the releva
 - `flow-be-001`: Request a "Mate in X" Puzzle
 - `flow-be-002`: Request a Personalized Puzzle
 - `flow-be-003`: Process a Player's Move
+- `flow-be-004`: User Authentication
 
 #### `business-logic`
 - `flow-be-001`: Request a "Mate in X" Puzzle
 - `flow-be-002`: Request a Personalized Puzzle
 - `flow-be-003`: Process a Player's Move
+- `flow-be-004`: User Authentication
 
 #### `data-access`
 - `flow-be-001`: Request a "Mate in X" Puzzle
 - `flow-be-002`: Request a Personalized Puzzle
+- `flow-be-004`: User Authentication
 
 #### `chess-engine-integration`
 - `flow-be-003`: Process a Player's Move
@@ -41,9 +45,13 @@ This document defines a set of tags for key concepts and maps them to the releva
 - `flow-be-001`: Request a "Mate in X" Puzzle
 - `flow-be-002`: Request a Personalized Puzzle
 - `flow-be-003`: Process a Player's Move
+- `flow-be-004`: User Authentication
 
 #### `spring-boot`
 - `flow-be-001`: Request a "Mate in X" Puzzle
 - `flow-be-002`: Request a Personalized Puzzle
 - `flow-be-003`: Process a Player's Move
-- `flow-be-004`: User Management (Placeholder)
+- `flow-be-004`: User Authentication
+
+#### `security`
+- `flow-be-004`: User Authentication

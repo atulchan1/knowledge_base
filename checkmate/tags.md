@@ -45,12 +45,8 @@ This document defines a set of tags for key concepts and maps them to the releva
 - `flow-006`: Puzzle Resolution
 
 #### `routing`
-- `flow-001`: Application Loading & Authentication Check
+- `flow-001`: Application Loading
 - `flow-003`: Puzzle Selection & Configuration
-
-#### `local-storage`
-- `flow-001`: Application Loading & Authentication Check
-- `flow-007`: User Logout
 
 #### `puzzle-lifecycle`
 - `flow-003`: Puzzle Selection & Configuration

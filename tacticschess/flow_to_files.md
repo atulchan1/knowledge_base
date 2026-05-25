@@ -24,7 +24,7 @@ This document maps the backend API flows to the source code files that are prima
 - `model/ChessPositionRequest.java`: The DTO received from the client.
 - `model/ChessPositionResponse.java`: The DTO returned to the client.
 
-### `flow-be-004`: User Authentication
+### `flow-be-004`: User Authentication #security
 - `controller/AuthController.java`: Defines the `/api/auth/login` and `/api/auth/logout` endpoints.
 - `security/SecurityConfig.java`: Configures web security, CORS, and which endpoints are protected.
 - `security/TokenAuthenticationFilter.java`: Intercepts requests to validate the session token.
